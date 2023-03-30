@@ -6,6 +6,14 @@
         <title>Document</title>
     </head>
     <body>
-        <h1>Hello EJS</h1>
+        <h1>
+            List User <%for (let item of data) { %>
+            <ul>
+                <li><%= item.firstName %></li>
+                <li><%= item.lastName %></li>
+                <li><%= item.email %></li>
+            </ul>
+            <%}%>
+        </h1>
     </body>
 </html>

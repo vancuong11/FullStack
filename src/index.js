@@ -4,6 +4,7 @@ require('dotenv').config();
 
 import viewEngine from './config/viewEngine';
 import initWebRoute from './routes/web';
+import connectDB from './config/connectDB';
 
 let app = express();
 
@@ -13,6 +14,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 viewEngine(app);
 initWebRoute(app);
+
+connectDB();
 
 let port = process.env.PORT || 3979;
 
