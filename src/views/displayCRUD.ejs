@@ -33,6 +33,7 @@
                         <th scope="col">LastName</th>
                         <th scope="col">Address</th>
                         <th scope="col">PhoneNumber</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -44,6 +45,10 @@
                         <td><%= item.lastName%></td>
                         <td><%= item.address%></td>
                         <td><%= item.phoneNumber%></td>
+                        <td>
+                            <a class="btn btn-info" href="/edit-crud?id=<%=item.id%>">Edit</a>
+                            <a class="btn btn-danger" href="">Delete</a>
+                        </td>
                     </tr>
                     <% } %>
                 </tbody>
