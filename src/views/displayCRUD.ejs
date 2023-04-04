@@ -27,7 +27,7 @@
             <table class="table table-hover">
                 <thead>
                     <tr>
-                        <th scope="col">#</th>
+                        <!-- <th scope="col">#</th> -->
                         <th scope="col">Email</th>
                         <th scope="col">FirstName</th>
                         <th scope="col">LastName</th>
@@ -39,7 +39,7 @@
                 <tbody>
                     <% for(let item of data) { %>
                     <tr>
-                        <th scope="row"><%= item.id %></th>
+                        <!-- <th scope="row"><%= item.id %></th> -->
                         <td><%= item.email%></td>
                         <td><%= item.firstName%></td>
                         <td><%= item.lastName%></td>
@@ -47,7 +47,7 @@
                         <td><%= item.phoneNumber%></td>
                         <td>
                             <a class="btn btn-info" href="/edit-crud?id=<%=item.id%>">Edit</a>
-                            <a class="btn btn-danger" href="">Delete</a>
+                            <a class="btn btn-danger" href="/delete-crud?id=<%=item.id%>">Delete</a>
                         </td>
                     </tr>
                     <% } %>
