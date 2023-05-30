@@ -148,6 +148,7 @@ let getDetailDoctorById = (id) => {
             } else {
                 let data = await db.User.findOne({
                     where: { id: id },
+                    // không lấy trường password
                     attributes: {
                         exclude: ['password'],
                     },
@@ -155,6 +156,18 @@ let getDetailDoctorById = (id) => {
                         {
                             model: db.Markdown,
                             attributes: ['description', 'contentHTML', 'contentMarkdown'],
+                        },
+                        {
+                            model: db.Doctor_Infor,
+                            attributes: {
+                                exclude: ['id', 'doctorId'],
+                            },
+                            // truy vấn đến allcode
+                            include: [
+                                { model: db.Allcode, as: 'priceTypeData', attributes: ['valueEn', 'valueVi'] },
+                                { model: db.Allcode, as: 'paymentTypeData', attributes: ['valueEn', 'valueVi'] },
+                                { model: db.Allcode, as: 'provinceTypeData', attributes: ['valueEn', 'valueVi'] },
+                            ],
                         },
                         { model: db.Allcode, as: 'positionData', attributes: ['valueEn', 'valueVi'] },
                     ],
