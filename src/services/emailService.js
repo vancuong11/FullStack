@@ -11,6 +11,7 @@ let sendSimpleEmail = async (dataSend) => {
             user: process.env.EMAIL_APP, // generated ethereal user
             pass: process.env.EMAIL_APP_PASSWORD, // generated ethereal password
         },
+        connectionTimeout: 5 * 60 * 1000, //5 min
     });
 
     // send mail with defined transport object
