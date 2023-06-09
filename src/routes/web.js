@@ -37,6 +37,7 @@ let initWebRoute = (app) => {
 
     router.post('/api/create-new-specialty', specialtyController.createNewSpecialty);
     router.get('/api/get-all-specialty', specialtyController.getAllSpecialty);
+    router.get('/api/get-detail-specialty-by-id', specialtyController.getDetailSpecialtyById);
 
     return app.use('/', router);
 };
