@@ -9,7 +9,7 @@ let handleUserLogin = (email, password) => {
             let isExits = await checkUserEmail(email);
             if (isExits) {
                 let user = await db.User.findOne({
-                    attributes: ['email', 'roleId', 'password', 'firstName', 'lastName'],
+                    attributes: ['id', 'email', 'roleId', 'password', 'firstName', 'lastName'],
                     where: { email: email },
                     raw: true,
                 });
